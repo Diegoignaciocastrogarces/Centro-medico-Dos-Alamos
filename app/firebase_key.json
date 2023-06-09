@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "centro-medico-dos-alamos",
+  "private_key_id": "63e52aeb04dba685c16cc6bfc5c3e27dc36a95cb",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDEkueC7Rz60iz8\ni8oVaQQ2nrxjBWEfqUE4PAr3Q4iWNaimuVJVuJt4ujXYXzarDiy+N3QBKLDx1++/\nxDVJLaLqRDm+ZP/r8Hnc1TUPEHYNmE4rmRmJbe8UScRTdi2h0yFm9YUs641k7NgU\n7FlzbDyd7wFGKjqXBQ9YMJNuI/Gu3MQM6Abv+a3KSX79uPXFAaMtx1WC6XV7F/BQ\ndYgwSVNuts5SBw8Frqk/zkYeTCGFlgFdg3ciCfmDBc+exJRUmHiO1YFObrGR3OnH\nr5pLQSRhchvJKdTsq7BQw91iuIESbq5A/gEv/qxfNxfzpm21ASIEO+vSlZ0rx0i4\ndYqIF5WrAgMBAAECggEAQFZ8o6OL2qQzySzPpZZLpLzrl9VI5p31FLzCMg/Ogqtp\nWbhKNHhJmogH25u+PtpS1qc7tq1kzKMKe09yyVLAgcB2zdQs10JMAHVf+mA+41A4\nNZjUfOCYYaGLOm3xnYeG5TXysrMeAixqxN5eoKKKbH6vghGMP6WOUiUD/AaTsdFJ\nGS8AHm15jvwH6wh2usAvgv9vlq27vvpIMkSQbgZiSiUvb5nCuT7YJCZfTWgja1NW\nJeiDI9LZnXCbfnmvMxOc7y8yPhiNe0d4VAOgN6dyuP7sixM8BLa3oNpAUvB628sr\ni04LW9XfteHQN8CB/1NOPAF2WH8U9UnkVZA2KCoosQKBgQDgX1m42JgzHP+2PiCw\nJIZRBBOhWidNeVw3MSvQ1Ywcb6/FAW/40Z7hhhvs9hhagMux7kPHJnar+gtEKWA6\nP1B2/Aa1MmYGosVJRvhZUnoNGZlB1FRwDh+Bz6nxr03i3d0u24BvZTqsfJNBg4ZN\nvlWZanyhk/3JwkOUmpPBEZ4BTwKBgQDgSGt2xY+klhFxA/PQb+uZitbhXdop9KDt\ndh2xTvY2G1GuYvqwrK3f/R8s+jBIWZDKidTb7CHJUZMz5HdnUlRk7rpApg+89RiW\nIDAylkvZMN1wmLlVl+7Uf2hv7Gg7w7B22HNkqAVV8AlUVKq84iaP45Q/yki0fy2D\n9GPtNvp25QKBgQCeAmhEJbyhmlV2uS/5++7fVRih88Rj6giIEcfCjPDcAcdt3MJH\nHxBd0D0QVor2CWfpyVrQAAVovXF7sgvDWV1IPdpXdsOk/rIjFajF9rBfU1y7oFVK\niJelqmILAyK9lvMyEYDUchys5hop8/779wN/RB+7Bmae1IEVQPq257o3PwKBgC+m\ns05UwyQQzjvYvyB15vSETwsqyYNIejh5c+2L/TuZqk0GsoR+66I/QTRpI4D7pouh\npRvkm3kOX9wSmlvVXiDjp6a8oXNgD4014Yed7xeCDkox6I6K7S8wspu0+qBX/1IA\nwuOL3zZW/WRxaKUg11iS3Zh//dp7eswiTGjF2YkRAoGAdxkUiT4K9u71WhV9p4yr\nM1kmpRTziWFDQSGqrzLs+GBY0FGjiU9SWw7gzlkUhTqlHiYF8+IpGjEzt3R5dF8N\nMpCJ+Jqq+ij/xweb74PrkB9I/cE5IF4TsDGNbj0CbL1iphNgeYMZMW/FBXOz5PEI\ngXb9Ip74KsgngIUbuj/riQ8=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-ez6c7@centro-medico-dos-alamos.iam.gserviceaccount.com",
+  "client_id": "112330733050494923697",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-ez6c7%40centro-medico-dos-alamos.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
