@@ -1,11 +1,20 @@
 {% extends 'base.html' %}
-
+{% block importation %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+{% endblock %}
 {% block title %}Login{% endblock %}
 
 {% block content %}
 
-<div class="container bg-warning mt-7">
-<h1 class="text-danger">Hola mundo</h1>
+<div id= "login_box" class="container w-25 d-flex flex-column align-items-center">
+<h5 class="text-light poppins pt-3 pb-3">Inicio de sesión</h5>
+<form action="" method="post" class="was-validated">
+    <label class="txtrosa poppins ps-7" for="user_name">Usuario:</label><br>
+    <input class="form-control" type="text" id="usrname" name="user_name" placeholder="Ingrese su nombre de usuario" required><br>
+    <label class="txtrosa poppins" for="user_password">Contraseña:</label><br>
+    <input class="form-control" type="password" id="usrpassword" name="user_password" placeholder="Ingrese su contraseña" required><br><br>
+    <input class="btn bgceleste text-light poppins ms-4 w-75 h-50 mb-5" type="submit" value="Ingresar">
+  </form> 
 </div>
 
 

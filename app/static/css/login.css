@@ -1,0 +1,32 @@
+#login_box {
+    margin-top: 10%;
+    background-color: rgb(16, 31, 55);
+    border: 1px solid rgb(229, 174, 212);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.txtrosa {
+    color: rgb(229, 174, 212);
+}
+
+.bgrosa {
+    background-color: rgb(229, 174, 212);
+}
+
+.bgceleste {
+    background-color: rgb(0, 143, 152);
+}
+
+.poppins {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.btn:hover {
+    background-color: rgb(229, 174, 212);
+}
+
+.form-control::placeholder {
+    font-size: small;
+}
