@@ -1,0 +1,31 @@
+{% extends "navBar.html" %}
+
+{% block title %}Ver historial clínico paciente{% endblock %}
+
+{% block contentNavBar %}
+<div class="container w-50 mx-auto mt-5 bgazuloscuro bordeRosa">
+    <div class="container row w-100">
+        <div class="col">
+        <h5 class="text-light poppins text-center pt-3 pb-4">Pacientes</h5>
+        </div>
+    </div>
+    <div class=" container row w-100">
+        <div class="col">
+            <h6 class="txtrosa text-center me-5">RUT</h6>
+        </div>
+        <div class="col">
+            <h6 class="txtrosa text-center me-5">Nombre Completo</h6>
+        </div>
+    </div>
+    <div class="container row w-100">
+        <div class="col">
+            {% for pac in pacientes %}
+            <div class="list-group mt-3 mb-3">
+                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-around"><span>{{ pac.RUT }}</span><span>{{ pac.FirstName }} {{ pac.SecondName }} {{ pac.FirstSurName }} {{ pac.SecondSurName }}</span></a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock contentNavBar %}
