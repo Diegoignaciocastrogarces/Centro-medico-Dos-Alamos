@@ -1,9 +1,31 @@
 {% extends "base.html" %}
+{% block importation %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/navBar.css')}}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+{% endblock %}
 
 {% block content %}
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Logo</a>
+
+<nav id="navBar_horaSalud" class=" row navbar navbar-expand-sm navbar-dark">
+    <div class="col">
+        <img id='logoHS' class="navbar-brand" src="{{url_for('static', filename='images/logo_horaSalud.png')}}" alt="logo_horaSalud">
+        <img class='justify-self-start' src="{{url_for('static', filename='images/logoName_horaSalud.png')}}" alt="namelogo_horaSalud">
     </div>
-  </nav>
+    <div class="col">
+        <div class="d-flex justify-content-between">
+            <i class="material-icons txtrosa" style="font-size: 50px;">brightness_medium</i>
+            <i class="material-icons txtrosa" style="font-size: 50px;">settings</i>
+            <div class="d-flex" style="justify-self: end;">
+                <p class="txtrosa poppins align-self-center me-2" style="margin-bottom: 0">{{ nombre }}</p>
+                <i class="material-icons txtrosa me-5" style="font-size: 50px;">assignment_ind</i>
+            </div>
+        </div>
+    </div>
+</nav>
+
+  {% block contentNavBar %}
+
+  {% endblock %}
+
 {% endblock %}

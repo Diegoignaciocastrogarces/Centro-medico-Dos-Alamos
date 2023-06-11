@@ -1,9 +1,17 @@
-#login_box {
-    margin-top: 10%;
+#navBar_horaSalud {
     background-color: rgb(16, 31, 55);
     border: 1px solid rgb(229, 174, 212);
     border-radius: 15px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#logoHS {
+    width: 70px;
+    height: 70px;
+}
+
+.bgazuloscuro {
+    background-color: rgb(16, 31, 55);
 }
 
 .txtrosa {
@@ -27,16 +35,8 @@
     background-color: rgb(229, 174, 212);
 }
 
-.form-control::placeholder {
-    font-size: small;
-}
-
-.valid-feedback {
-    margin-top: -15px;
-    margin-bottom: 10px;
-}
-
-.invalid-feedback {
-    margin-top: -15px;
-    margin-bottom: 10px;
+.bordeRosa {
+    border: 1px solid rgb(229, 174, 212);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

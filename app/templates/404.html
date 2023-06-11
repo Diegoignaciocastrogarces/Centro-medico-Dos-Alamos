@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}Error 404{% endblock %}
+
+{% block content %}
+<div class="container w-25 d-flex flex-column bgazuloscuro mt-5 align-items-center bordeRosa">
+<img style="width: 250px; height:250px; padding: 15px;" src="{{url_for('static', filename='images/pagina-no-encontrada.png')}}" alt="pagina no encontrada">
+<h5 class="text-light poppins mb-3">¡Opss... la pagina que buscas no existe!</h5>
+</div>
+{% endblock content %}

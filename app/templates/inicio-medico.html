@@ -1,0 +1,15 @@
+{% extends "navBar.html" %}
+
+{% block title %}Inicio{% endblock %}
+
+
+{% block contentNavBar %}
+
+<div class="container d-flex bgazuloscuro bordeRosa mt-5 pt-3 pb-3 justify-content-around">
+    <h6 class="text-light poppins pt-2">Bienvenido <span class="txtrosa">{{ userData.FirstName }} {{ userData.LastName }} </span></h6>
+    <button type="button" class="btn bgceleste text-light">Ver historial clínico de paciente</button>
+    <button type="button" class="btn bgceleste text-light">Ver calendario de citas médicas</button>
+</div>
+
+
+{% endblock %}

@@ -1,4 +1,5 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, redirect, url_for
+from config import db
 
 bp = Blueprint('views', __name__)
 
@@ -8,5 +9,40 @@ def login():
     if request.method == 'POST':
         username = request.form['user_name']
         password = request.form['user_password']
-        return f'Nombre de usuario: {username}, Contraseña: {password}'
+    
+        ref_usuario = db.collection('Usuarios')
+        query = ref_usuario.where('Username', '==', username).where('Password', '==', password)
+        resultado = query.get()
+        
+        if resultado:
+            return redirect(url_for('views.inicio_medico', nombre = username))
+        else:
+            return 'Credenciales de inicio de sesión inválidas'
+        
     return render_template('login.html')
+
+@bp.route('/inicioMedico/<nombre>')
+def inicio_medico(nombre):
+    ref_usuario = db.collection('Usuarios')
+    query = ref_usuario.where('Username', '==', nombre)
+    resultado = query.get()
+    
+    doc = resultado[0]   
+    data = doc.to_dict()
+    print(data)
+    
+    
+    user_data = {
+        'Username' : data['Username'],
+        'FirstName': data['FirstName'],
+        'LastName': data['LastName'],
+        'Rol': data['Rol']
+    }
+    
+    if resultado:
+        return render_template('inicio-medico.html', nombre = nombre, userData = user_data)
+    else:
+        return render_template('404.html')
+    
+    
+
