@@ -21,7 +21,7 @@
         <div class="col">
             {% for pac in pacientes %}
             <div class="list-group mt-3 mb-3">
-                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-around"><span>{{ pac.RUT }}</span><span>{{ pac.FirstName }} {{ pac.SecondName }} {{ pac.FirstSurName }} {{ pac.SecondSurName }}</span></a>
+                <a href="{{url_for('views.historial_clinico_paciente', rut=pac.RUT)}}" class="list-group-item list-group-item-action d-flex justify-content-around"><span>{{ pac.RUT }}</span><span>{{ pac.FirstName }} {{ pac.SecondName }} {{ pac.FirstSurName }} {{ pac.SecondSurName }}</span></a>
             </div>
             {% endfor %}
         </div>

@@ -1,0 +1,77 @@
+{% extends "navBar.html" %}
+
+{% block title %}Historial clínico{% endblock %}
+
+{% block contentNavBar %}
+<div class="container w-50 mx-auto mt-5 pb-3 bgazuloscuro bordeRosa">
+    <div class="row">
+        <div class="col">
+        <h5 class="txtrosa poppins mt-3">Información personal</h5>
+        <h6 class="txtceleste">Rut Paciente: <span class="text-light">{{ historial_data.Rut_paciente }}</span></h6>
+        <h6 class="txtceleste">Nombres: <span class="text-light">{{ historial_data.Paciente.FirstName }} {{ historial_data.Paciente.SecondName }}</span></h6>
+        <h6 class="txtceleste">Apellidos: <span class="text-light">{{ historial_data.Paciente.FirstSurName }} {{ historial_data.Paciente.SecondSurName }}</span></h6>
+        <h6 class="txtceleste">Sexo: <span class="text-light">{{ historial_data.Paciente.Sexo }}</span></h6>
+        <h6 class="txtceleste">Fecha de nacimiento: <span class="text-light">{{ historial_data.Paciente.FechaNacimiento }}</span></h6>
+        <h6 class="txtceleste">Dirección: <span class="text-light">{{ historial_data.Paciente.Direccion}}</span></h6>
+        <h6 class="txtceleste">Teléfono: <span class="text-light">{{ historial_data.Paciente.Telefono }}</span></h6>
+        <h6 class="txtceleste">Correo electrónico: <span class="text-light">{{ historial_data.Paciente.CorreoElectronico }}</span></h6>
+        </div>
+        <div class="col pb-3">
+            <h5 class="txtrosa w-100 poppins mt-3">Antecedentes Médicos:</h5>
+            <h6 class="text-light poppins">Enfermedades crónicas</h6>
+            {% for enf in historial_data.Antecedentes['Enfermedades cronicas'] %}
+            <span class="badge bgceleste poppins">{{ enf }}</span>
+            {% endfor %}       
+            <h6 class="text-light mt-3 poppins">Alergias</h6> 
+            {% for al in historial_data.Antecedentes.Alergias %}
+            <span class="badge bgceleste poppins">{{ al }}</span>   
+            {% endfor %}
+            <h6 class="text-light mt-3 poppins">Condiciones preexistentes</h6>
+            {% for cond in historial_data.Antecedentes['Condiciones preexistentes'] %}
+            <span class="badge bgceleste poppins">{{ cond }}</span>
+            {% endfor %}
+            <h6 class="text-light mt-3 poppins">Intervenciones quirurgicas</h6>
+            {% for inter in historial_data.Antecedentes['Intervenciones quirurgicas'] %}
+            <span class="badge bgceleste poppins">{{ inter }}</span>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h5 class="txtrosa w-100 poppins mb-3">Consultas y tratamiento:</h5>
+            {% for cons in historial_data.Consultas %}
+            <h6 class="text-light poppins mt-3">{{ cons['Fecha'] }}</h6>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-dark txtceleste poppins">Diagnóstico: <span class="text-light">{{ cons['Diagnostico'] }}</span></li>
+                <li class="list-group-item bg-dark txtceleste poppins">Tratamiento: <span class="text-light">{{ cons['Tratamiento'] }}</span></li>
+            </ul>
+            {% endfor %}
+        </div>
+        <div class="col">
+            <h5 class="txtrosa w-100 poppins">Medicamentos:</h5>
+            {% for key_med in historial_data.Medicamentos %}
+            {% set medicamento = historial_data.Medicamentos[key_med] %}
+            <ul class="list-group list-group-horizontal">
+                <li class="list-group-item poppins bg-dark text-light">{{ medicamento.Nombre }}</li>
+                <li class="list-group-item poppins bg-dark text-light">{{ medicamento.Instrucciones }}</li>
+                <li class="list-group-item poppins bg-dark txtceleste">{{ medicamento.Dosis }}</li>
+            </ul>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h5 class="txtrosa w-100 poppins mt-3">Resultado pruebas</h5>
+            {% for key_prueba in historial_data.Resultados_pruebas %}
+            {% set resultadosPruebas = historial_data.Resultados_pruebas[key_prueba] %}
+            <h6 class="text-light">{{ resultadosPruebas.Tipo }} <span class="badge bgceleste poppins">{{ resultadosPruebas.Resultado }}</span></h6>
+            {% endfor %}
+        </div>
+        <div class="col">
+            <h5 class="txtrosa w-100 poppins mt-3">Notas médico:</h5>
+            <p class="text-light poppins">{{ historial_data.Notas_medico }}</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

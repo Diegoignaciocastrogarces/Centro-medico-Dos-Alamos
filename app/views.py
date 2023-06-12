@@ -50,36 +50,63 @@ def listado_pacientes(nombre):
     ref_usuario = db.collection('Usuarios')
     query = ref_usuario.where('Username', '==', nombre)
     resultado = query.get()
-    
-    doc = resultado[0]   
-    data = doc.to_dict()
-    print(data)
-    
-    medic_name = data['Username']
-    
-    ref_atencion_medica = db.collection('Atencion Medica')
-    query_atencion = ref_atencion_medica.where('MedicUserName', '==', medic_name)
-    atencion_resultado = query_atencion.get()
-    
-    pacientes_list = []
-    
-    for atencion_doc in atencion_resultado:
-        atencion_data = atencion_doc.to_dict()
-        paciente_id = atencion_data['RutPaciente']
-        
-        ref_paciente = db.collection('Pacientes')
-        query_paciente = ref_paciente.where('RUT', '==', paciente_id).get()
-        
-        for paciente_doc in query_paciente:
-            if paciente_doc.exists:
-                
+
+    if resultado:
+        doc = resultado[0]
+        data = doc.to_dict()
+        medic_name = data['Username']
+
+        ref_atencion_medica = db.collection('Atencion Medica')
+        query_atencion = ref_atencion_medica.where('MedicUserName', '==', medic_name)
+        atencion_resultado = query_atencion.get()
+
+        pacientes_list = []
+
+        for atencion_doc in atencion_resultado:
+            atencion_data = atencion_doc.to_dict()
+            paciente_id = atencion_data['RutPaciente']
+
+            ref_paciente = db.collection('Pacientes')
+            query_paciente = ref_paciente.where('RUT', '==', paciente_id).get()
+
+            for paciente_doc in query_paciente:
                 paciente_data = paciente_doc.to_dict()
                 pacientes_list.append(paciente_data)
-    
-    if resultado:
-        return render_template('listado-pacientes.html', nombre = nombre, pacientes = pacientes_list)
+
+        return render_template('listado-pacientes.html', nombre=nombre, pacientes=pacientes_list)
     else:
         return render_template('404.html')
     
     
+@bp.route('/listadoPacientes/historialClinico/<rut>')
+def historial_clinico_paciente(rut):
+    ref_historial = db.collection('Historial Clinico')
+    query_historial = ref_historial.where('RutPaciente', '==', rut)
+    historial_resultado = query_historial.get()
+    
+    data = {}
+    
+    for historial_doc in historial_resultado:
+        historial_data = historial_doc.to_dict()
+        
+        #Obtener los datos de patient(ObjectReference) de Cloud Firestore
+        paciente_ref = historial_data['patient']
+        paciente_doc = paciente_ref.get()
+        paciente_resultado = paciente_doc.to_dict()
+    
+        
+        historial_dict = {
+            'Rut_paciente': historial_data['RutPaciente'],
+            'Paciente': paciente_resultado,
+            'Antecedentes': historial_data['Antecedentes medicos'],
+            'Consultas': historial_data['Consultas tratamiento'],
+            'Medicamentos': historial_data['Medicamentos'],
+            'Resultados_pruebas': historial_data['Resultado pruebas'],
+            'Notas_medico': historial_data['Notas medico']
+        }
+        
+        data = historial_dict
+        
+   
+    return render_template('historial-clinico-paciente.html', rut = rut, historial_data = data)
 
